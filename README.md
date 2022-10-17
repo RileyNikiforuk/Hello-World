@@ -1,4 +1,9 @@
-# Hello World CS10
+# Hello World
+CS10 Lesson
 
+---
 
-Type some stuff
+Lesson summary
+-
+
+---
