@@ -28,7 +28,9 @@ void setup() {
 } //End setup
 //
 void draw() {
-  ellipse(50, 100, 10, 120);
+  rect(120, 80, 220, 220);
+  arc(500, 200, 320, 320, 0, PI+QUARTER_PI, OPEN);
+  quad(25, 100, 344, 80, 276, 252, 120, 304);
 } //End draw
 //
 void keyPressed() {
