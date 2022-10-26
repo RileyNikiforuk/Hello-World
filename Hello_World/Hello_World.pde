@@ -28,9 +28,7 @@ void setup() {
 } //End setup
 //
 void draw() {
-  rect(120, 80, 220, 220);
-  arc(500, 200, 320, 320, 0, PI+QUARTER_PI, OPEN);
-  quad(25, 100, 344, 80, 276, 252, 120, 304);
+  rect(120, 80, 220, 220, 12, 24, 48, 72);
 } //End draw
 //
 void keyPressed() {
