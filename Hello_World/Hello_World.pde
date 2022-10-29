@@ -1,7 +1,7 @@
 //Global Variables
 int appWidth, appHeight;
 float centerX, centerY, xStart, yStart, widthRect, heightRect;
-color blackNightMode=#000000, orange=#FF8512, white=#FFFFFF, red=#FF0000; //Hexidecimal
+color blackNightMode=#000000, orange=#FF8512, white=#FFFFFF, red=#FF0000, black=#000000; //Hexidecimal
 color orangeNightMode=#FF8500, redNightMode=#FF0000, whiteNightMode=#FFFF00;
 float thin, normal, thick;
 Boolean nightMode=false, randomBackground=false;
@@ -86,17 +86,17 @@ void draw() {
 {
   fill( whiteNightMode );
 } else {
-  fill(white);
+  fill( white );
 }
-  background(0);
+  background(black);
   textFont(font); //introduce the font
-  fill(255, 255,255);
+  fill(white);
   ellipse(ellX, ellY, 25, 25);
   text("Pong", 300, 40);
-  fill(255, 255, 255);
+  fill(white);
   rect(20, LrectY, 15, 115);
   text(countL, 200, 50); //score for left side
-  fill(255, 255, 255);
+  fill(white);
   rect(665, RrectY, 15, 115);
   text(countR, 500, 50); //score for right side
   if ( keyPressed == true && key == 'w' ) 
