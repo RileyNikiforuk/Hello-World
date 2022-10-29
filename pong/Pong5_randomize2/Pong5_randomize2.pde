@@ -2,7 +2,7 @@
 int appWidth, appHeight;
 float centerX, centerY, xStart, yStart, widthRect, heightRect;
 color blackNightMode=#000000, orange=#FF8512, white=#FFFFFF, red=#FF0000; //Hexidecimal
-color orangeNightMode=#FF8500, redNightMode=#FF0000, whiteNightMode=#FFFF00;
+color orangeNightMode=#FF8500, redNightMode=#FF0000;
 float thin, normal, thick;
 Boolean nightMode=false, randomBackground=false;
 Boolean greyScale=false, backgroundColor=false;
@@ -64,12 +64,12 @@ void draw() {
   //if ( backgroundColor == true ) background( color( random(0 , 255), random(0 , 255), random(0 , 255) ) ); // Color without blue
   //
   //strokeWeight( thick );
-  //if ( nightMode == true ) 
+  if ( nightMode == true ) 
 {
   //background( blackNightMode );
   //stroke( orangeNightMode );
   //fill(redNightMode);
-} //else 
+} else 
 {
   //stroke( orange );
   //fill( red );
@@ -82,12 +82,6 @@ void draw() {
   //circle(130, 100, 60);
   //circle(90, 110, 60);
   //circle(90, 75, 60);
-  if ( nightMode == true ) 
-{
-  fill( whiteNightMode );
-} else {
-  fill(white);
-}
   background(0);
   textFont(font); //introduce the font
   fill(255, 255,255);

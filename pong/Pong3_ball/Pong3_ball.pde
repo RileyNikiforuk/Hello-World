@@ -2,21 +2,18 @@
 int appWidth, appHeight;
 float centerX, centerY, xStart, yStart, widthRect, heightRect;
 color blackNightMode=#000000, orange=#FF8512, white=#FFFFFF, red=#FF0000; //Hexidecimal
-color orangeNightMode=#FF8500, redNightMode=#FF0000, whiteNightMode=#FFFF00;
+color orangeNightMode=#FF8500, redNightMode=#FF0000;
 float thin, normal, thick;
 Boolean nightMode=false, randomBackground=false;
 Boolean greyScale=false, backgroundColor=false;
 int LrectY = 350; //initial Left paddle position
 int RrectY = 350;
-float ellX = width / 2; // initial ellipse position in the middle
-float ellY = height / 2;
+int ellX = width / 2; // initial ellipse position in the middle
+int ellY = height / 2;
 boolean moveRight = true; //this means moving left is false
 boolean moveDown = true; //this means moving up is false
-float speedSide = 3; //speed in X direction, higher value is greater speed
-float speedVertical = 4; //speed in Y direction
-int countR = 0; //score for right side
-int countL = 0; //score for left side
-PFont font; //font used for scoring
+int speedSide = 3; //speed in X direction, higher value is greater speed
+int speedVertical = 4; //speed in Y direction
 //
 void setup() {
   //Declaring Display Geometry: landscape, square, portrait
@@ -52,7 +49,6 @@ void setup() {
   thin = appWidth / appWidth; //1
   normal = appWidth * 1/70;
   thick = appWidth * 1/35;
-  font = loadFont("Algerian-48.vlw"); // fontfor score is Arial, under tools
 } //End setup
 //
 void draw() {
@@ -64,12 +60,12 @@ void draw() {
   //if ( backgroundColor == true ) background( color( random(0 , 255), random(0 , 255), random(0 , 255) ) ); // Color without blue
   //
   //strokeWeight( thick );
-  //if ( nightMode == true ) 
+  if ( nightMode == true ) 
 {
   //background( blackNightMode );
   //stroke( orangeNightMode );
   //fill(redNightMode);
-} //else 
+} else 
 {
   //stroke( orange );
   //fill( red );
@@ -82,23 +78,13 @@ void draw() {
   //circle(130, 100, 60);
   //circle(90, 110, 60);
   //circle(90, 75, 60);
-  if ( nightMode == true ) 
-{
-  fill( whiteNightMode );
-} else {
-  fill(white);
-}
   background(0);
-  textFont(font); //introduce the font
   fill(255, 255,255);
   ellipse(ellX, ellY, 25, 25);
-  text("Pong", 300, 40);
   fill(255, 255, 255);
   rect(20, LrectY, 15, 115);
-  text(countL, 200, 50); //score for left side
   fill(255, 255, 255);
   rect(665, RrectY, 15, 115);
-  text(countR, 500, 50); //score for right side
   if ( keyPressed == true && key == 'w' ) 
   { //Y value decreases, allows left paddle to move up
     LrectY = LrectY - 6;
@@ -131,28 +117,14 @@ else {
 }
 if ( ellY <= 10 ) { //creates border at top, so circle will move down
   moveDown = true;
-  speedSide = random(3, 6); //random number between 3-6, speed changes
 }
 if ( ellY >= 690 ) { //creates border at bottom, so circle will move up
   moveDown = false;
-  speedSide = random(3, 6); //random number between 3-6, speed changes
 }
-if ( ellX >= 690 ) { //creates border at right that resets the ball and adds to score
-  countL++;
-  ellX = width / 2;
-  ellY = height / 2;
-  speedSide = random(3, 6); //random number between 3-6, speed changes
-}
-if ( ellX <= 10 ) { //creates border at left that resets the ball and adds to score
-  countR++;
-  ellX = width / 2;
-  ellY = height / 2;
-  speedSide = random(3, 6); //random number between 3-6, speed changes
-}
-if ( ellX >= 650 && ellY > RrectY && ellY < (RrectY + 100) ) { // creates right paddle boundary so circle will bounce off
+if ( ellX >= 690 ) { //creates border at right
   moveRight = false;
 }
-if ( ellX <= 50 && ellY > LrectY && ellY < (LrectY + 100) ) { // creates left paddle boundray so circle will bounce off
+if ( ellX <= 10 ) { // creates border at left
   moveRight = true;
 }
 } //End draw
