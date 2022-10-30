@@ -99,6 +99,20 @@ void draw() {
   fill(white);
   rect(665, RrectY, 15, 115);
   text(countR, 500, 50); //score for right side
+  fill(white);
+  rect(350, 350, 5, 50);
+  fill(white);
+  rect(350, 250, 5, 50);
+  fill(white);
+  rect(350, 150, 5, 50);
+  fill(white);
+  rect(350, 50, 5, 50);
+  fill(white);
+  rect(350, 450, 5, 50);
+  fill(white);
+  rect(350, 550, 5, 50);
+  fill(white);
+  rect(350, 650, 5, 50);
   if ( keyPressed == true && key == 'w' ) 
   { //Y value decreases, allows left paddle to move up
     LrectY = LrectY - 6;
@@ -135,19 +149,19 @@ if ( ellY <= 10 ) { //creates border at top, so circle will move down
 }
 if ( ellY >= 690 ) { //creates border at bottom, so circle will move up
   moveDown = false;
-  speedSide = random(3, 6); //random number between 3-6, speed changes
+  speedSide = random(3, 15); //random number between 3-6, speed changes
 }
 if ( ellX >= 690 ) { //creates border at right that resets the ball and adds to score
   countL++;
   ellX = width / 2;
   ellY = height / 2;
-  speedSide = random(3, 6); //random number between 3-6, speed changes
+  speedSide = random(3, 8); //random number between 3-8, speed changes
 }
 if ( ellX <= 10 ) { //creates border at left that resets the ball and adds to score
   countR++;
   ellX = width / 2;
   ellY = height / 2;
-  speedSide = random(3, 6); //random number between 3-6, speed changes
+  speedSide = random(3, 8); //random number between 3-8, speed changes
 }
 if ( ellX >= 650 && ellY > RrectY && ellY < (RrectY + 100) ) { // creates right paddle boundary so circle will bounce off
   moveRight = false;
