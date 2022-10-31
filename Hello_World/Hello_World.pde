@@ -84,20 +84,24 @@ void draw() {
   //circle(90, 75, 60);
   if ( nightMode == true ) 
 {
-  fill( whiteNightMode );
-} else {
-  fill( white );
+  fill(whiteNightMode);
+} else 
+{
+  fill(white);
 }
   background(black);
+  fill(white);
   textFont(font); //introduce the font
   fill(white);
   ellipse(ellX, ellY, 25, 25);
   text("Pong", 300, 40);
   fill(white);
   rect(20, LrectY, 15, 115);
+  fill(white);
   text(countL, 200, 50); //score for left side
   fill(white);
   rect(665, RrectY, 15, 115);
+  fill(white);
   text(countR, 500, 50); //score for right side
   fill(white);
   rect(350, 350, 5, 50);
