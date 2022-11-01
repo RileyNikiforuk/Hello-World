@@ -17,6 +17,8 @@ float speedVertical = 4; //speed in Y direction
 int countR = 0; //score for right side
 int countL = 0; //score for left side
 PFont font; //font used for scoring
+int wBrokenLine1 = width * 1/2, wBrokenLine2 = width * 1/2, wBrokenLine3 = width * 1/2, wBrokenLine4 = width * 1/2, wBrokenLine5 = width * 1/2, wBrokenLine6 = width * 1/2, wBrokenLine7 = width * 1/2;
+int hBrokenLine1 = height * 1/2;
 //
 void setup() {
   //Declaring Display Geometry: landscape, square, portrait
@@ -65,15 +67,15 @@ void draw() {
   //
   //strokeWeight( thick );
   //if ( nightMode == true ) 
-{
+//{
   //background( blackNightMode );
   //stroke( orangeNightMode );
   //fill(redNightMode);
-} //else 
-{
+//} //else 
+//{
   //stroke( orange );
   //fill( red );
-}
+//}
   //rect(xStart, yStart, widthRect, heightRect);
   //fill(white); //default reset
   //stroke( blackNightMode ); //default reset
@@ -84,39 +86,26 @@ void draw() {
   //circle(90, 75, 60);
   if ( nightMode == true ) 
 {
-  fill(whiteNightMode);
+  fill( whiteNightMode );
 } else 
 {
-  fill(white);
+  fill( white );
 }
   background(black);
-  fill(white);
   textFont(font); //introduce the font
-  fill(white);
   ellipse(ellX, ellY, 25, 25);
   text("Pong", 300, 40);
-  fill(white);
   rect(20, LrectY, 15, 115);
-  fill(white);
   text(countL, 200, 50); //score for left side
-  fill(white);
   rect(665, RrectY, 15, 115);
-  fill(white);
   text(countR, 500, 50); //score for right side
-  fill(white);
   rect(350, 350, 5, 50);
-  fill(white);
-  rect(350, 250, 5, 50);
-  fill(white);
-  rect(350, 150, 5, 50);
-  fill(white);
-  rect(350, 50, 5, 50);
-  fill(white);
-  rect(350, 450, 5, 50);
-  fill(white);
-  rect(350, 550, 5, 50);
-  fill(white);
-  rect(350, 650, 5, 50);
+  rect(wBrokenLine2, 250, 5, 50);
+  rect(wBrokenLine3, 150, 5, 50);
+  rect(wBrokenLine4, 50, 5, 50);
+  rect(wBrokenLine5, 450, 5, 50);
+  rect(wBrokenLine6, 550, 5, 50);
+  rect(wBrokenLine7, 650, 5, 50);
   if ( keyPressed == true && key == 'w' ) 
   { //Y value decreases, allows left paddle to move up
     LrectY = LrectY - 6;
