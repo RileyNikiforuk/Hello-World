@@ -18,7 +18,7 @@ int countR = 0; //score for right side
 int countL = 0; //score for left side
 PFont font; //font used for scoring
 int wBrokenLine1 = width * 1/2, wBrokenLine2 = width * 1/2, wBrokenLine3 = width * 1/2, wBrokenLine4 = width * 1/2, wBrokenLine5 = width * 1/2, wBrokenLine6 = width * 1/2, wBrokenLine7 = width * 1/2;
-int hBrokenLine1 = height * 1/2;
+int hBrokenLine1 = height * 1/2, hBrokenLine2 = height * 1/2, hBrokenLine3 = height * 1/2, hBrokenLine4 = height * 1/2, hBrokenLine5 = height * 1/2, hBrokenLine6 = height * 1/2, hBrokenLine7 = height * 1/2;
 //
 void setup() {
   //Declaring Display Geometry: landscape, square, portrait
@@ -99,13 +99,13 @@ void draw() {
   text(countL, 200, 50); //score for left side
   rect(665, RrectY, 15, 115);
   text(countR, 500, 50); //score for right side
-  rect(350, 350, 5, 50);
-  rect(wBrokenLine2, 250, 5, 50);
-  rect(wBrokenLine3, 150, 5, 50);
-  rect(wBrokenLine4, 50, 5, 50);
-  rect(wBrokenLine5, 450, 5, 50);
-  rect(wBrokenLine6, 550, 5, 50);
-  rect(wBrokenLine7, 650, 5, 50);
+  rect(hBrokenLine1, wBrokenLine1, 5, 50);
+  rect(hBrokenLine2, wBrokenLine2, 5, 50);
+  rect(hBrokenLine3, wBrokenLine3, 5, 50);
+  rect(hBrokenLine4, wBrokenLine4, 5, 50);
+  rect(hBrokenLine5, wBrokenLine5, 5, 50);
+  rect(hBrokenLine6, wBrokenLine6, 5, 50);
+  rect(hBrokenLine7, wBrokenLine7, 5, 50);
   if ( keyPressed == true && key == 'w' ) 
   { //Y value decreases, allows left paddle to move up
     LrectY = LrectY - 6;
