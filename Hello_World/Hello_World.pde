@@ -17,17 +17,18 @@ float speedVertical = 4; //speed in Y direction
 int countR = 0; //score for right side
 int countL = 0; //score for left side
 PFont font; //font used for scoring
-int wBrokenLine1 = width * 1/2, wBrokenLine2 = width * 1/2, wBrokenLine3 = width * 1/2, wBrokenLine4 = width * 1/2, wBrokenLine5 = width * 1/2, wBrokenLine6 = width * 1/2, wBrokenLine7 = width * 1/2;
-int hBrokenLine1 = height * 1/2, hBrokenLine2 = height * 1/2, hBrokenLine3 = height * 1/2, hBrokenLine4 = height * 1/2, hBrokenLine5 = height * 1/2, hBrokenLine6 = height * 1/2, hBrokenLine7 = height * 1/2;
+float wBrokenLine1, wBrokenLine2, wBrokenLine3, wBrokenLine4, wBrokenLine5, wBrokenLine6, wBrokenLine7;
+float hBrokenLine1, hBrokenLine2, hBrokenLine3, hBrokenLine4, hBrokenLine5, hBrokenLine6, hBrokenLine7;
+float textX, textY, LcounterX, LcounterY, RcounterX, RcounterY, LpaddleX, LpaddleY;
 //
 void setup() {
   //Declaring Display Geometry: landscape, square, portrait
-  size(700, 700); //Able to deploy with fullScreen();
+  size(800, 800); //Able to deploy with fullScreen();
   //fullScreen();
   appWidth = width;
   appHeight = height;
   //Concatenation: , or + (i.e space)
-  println("\t\t\tWidth="+width, "\tHeight="+height);
+  println("\t\tWidth="+width, "\t\tHeight="+height);
   println("Display Monitor:", "\twidth:"+displayWidth, "\theight:"+displayHeight);
   //
   String ls="Landscape or Square", p="portrait", DO="Display Orientation", instruct="Bru, turn your phun";
@@ -55,6 +56,28 @@ void setup() {
   normal = appWidth * 1/70;
   thick = appWidth * 1/35;
   font = loadFont("Algerian-48.vlw"); // fontfor score is Arial, under tools
+  wBrokenLine1 = appWidth * 3.5/7;
+  wBrokenLine2 = appWidth * 3.5/7;
+  wBrokenLine3 = appWidth * 3.5/7; 
+  wBrokenLine4 = appWidth * 3.5/7;
+  wBrokenLine5 = appWidth * 3.5/7;
+  wBrokenLine6 = appWidth * 3.5/7;
+  wBrokenLine7 = appWidth * 3.5/7;
+  hBrokenLine1 = appHeight * 0.5/7;
+  hBrokenLine2 = appHeight * 1.5/7;
+  hBrokenLine3 = appHeight * 2.5/7;
+  hBrokenLine4 = appHeight * 3.5/7;
+  hBrokenLine5 = appHeight * 4.5/7;
+  hBrokenLine6 = appHeight * 5.5/7;
+  hBrokenLine7 = appHeight * 6.5/7;
+  textX = appWidth * 3/7;
+  textY = appHeight * 0.4/7;
+  LcounterX = appWidth * 2.5/7;
+  LcounterY = appHeight * 0.4/7;
+  RcounterX = appWidth * 4.25/7;
+  RcounterY = appHeight * 0.4/7;
+  LpaddleX = appWidth * 0.5/7;
+  LpaddleX = appHeight * 3.5/7;
 } //End setup
 //
 void draw() {
@@ -94,18 +117,18 @@ void draw() {
   background(black);
   textFont(font); //introduce the font
   ellipse(ellX, ellY, 25, 25);
-  text("Pong", 300, 40);
-  rect(20, LrectY, 15, 115);
-  text(countL, 200, 50); //score for left side
+  text("Pong", textX, textY);
+  rect(LpaddleX, LrectY, 15, 115);
+  text(countL, LcounterX, LcounterY); //score for left side
   rect(665, RrectY, 15, 115);
-  text(countR, 500, 50); //score for right side
-  rect(hBrokenLine1, wBrokenLine1, 5, 50);
-  rect(hBrokenLine2, wBrokenLine2, 5, 50);
-  rect(hBrokenLine3, wBrokenLine3, 5, 50);
-  rect(hBrokenLine4, wBrokenLine4, 5, 50);
-  rect(hBrokenLine5, wBrokenLine5, 5, 50);
-  rect(hBrokenLine6, wBrokenLine6, 5, 50);
-  rect(hBrokenLine7, wBrokenLine7, 5, 50);
+  text(countR, RcounterX, RcounterY); //score for right side
+  rect(wBrokenLine1, hBrokenLine1, 5, 50);
+  rect(wBrokenLine2, hBrokenLine2, 5, 50);
+  rect(wBrokenLine3, hBrokenLine3, 5, 50);
+  rect(wBrokenLine4, hBrokenLine4, 5, 50);
+  rect(wBrokenLine5, hBrokenLine5, 5, 50);
+  rect(wBrokenLine6, hBrokenLine6, 5, 50);
+  rect(wBrokenLine7, hBrokenLine7, 5, 50);
   if ( keyPressed == true && key == 'w' ) 
   { //Y value decreases, allows left paddle to move up
     LrectY = LrectY - 6;
