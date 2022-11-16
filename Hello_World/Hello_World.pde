@@ -76,8 +76,8 @@ void setup() {
   LcounterY = appHeight * 0.4/7;
   RcounterX = appWidth * 4.25/7;
   RcounterY = appHeight * 0.4/7;
-  LpaddleX = appWidth * 0.5/7;
-  LpaddleX = appHeight * 3.5/7;
+  LpaddleX = appWidth * 0.1/7;
+  LpaddleY = appHeight * 6.8/7;
 } //End setup
 //
 void draw() {
@@ -120,7 +120,7 @@ void draw() {
   text("Pong", textX, textY);
   rect(LpaddleX, LrectY, 15, 115);
   text(countL, LcounterX, LcounterY); //score for left side
-  rect(665, RrectY, 15, 115);
+  rect(LpaddleY, RrectY, 15, 115);
   text(countR, RcounterX, RcounterY); //score for right side
   rect(wBrokenLine1, hBrokenLine1, 5, 50);
   rect(wBrokenLine2, hBrokenLine2, 5, 50);
